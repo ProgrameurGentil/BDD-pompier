@@ -54,7 +54,11 @@ button {
 header {
 	background-color: #222831;
 	padding: 20px 0;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
+}
+
+main {
+	padding-top: 20px;
 }
 
 div.titre {
@@ -84,7 +88,7 @@ header > div.filtrage > div.titreMenuDeroulant > div#btnMenuDeroulant {
 }
 
 div.conteneurFiltre {
-	/*display: flex;*/
+	display: flex;
 	gap: 20px;
 	padding-left: 50px;
 }
@@ -160,12 +164,13 @@ button#boutonRechercheFiltre > div > p {
 
 .ecran {
 	width: 100vw;
-	height: 100vh;
+	/*height: 100vh;*/
 	position: absolute;
 	display: flex;
   	align-items: center;
  	justify-content: center;
  	/*border: 1px solid;*/
+ 	margin-top: -20px;
 }
 
 /*.ecran:not(:focus)  {
@@ -267,4 +272,60 @@ div.infosVehicules > div.infoVehicule {
 div.infosVehicules > div.infoVehicule:last-child {
 	border: 0px solid;
 	padding: 0 0 20px 0;
+}
+
+
+@media screen and (max-width: 1110px) {
+
+	div.conteneurFiltre > div.filtre > select {
+		margin-left: -2px;
+    display: block;
+	}
+}
+
+@media screen and (max-width: 770px) {
+
+	div.titre > p {
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 738px) {
+
+	hr {
+		display: none;
+	}
+
+	div.conteneurFiltre {
+    display: block;
+	}
+
+	div.conteneurFiltre > div.filtre {
+		margin-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width: 550px)  {
+	.explication {
+		width: 450px;
+	}
+}
+
+@media screen and (max-width: 450px)  {
+	.explication {
+		width: 400px;
+	}	
+}
+
+@media screen and (max-width: 370px)  {
+	.explication {
+		width: 350px;
+	}	
+}
+
+@media screen and (max-width: 325px)  {
+	.explication {
+		width: 300px;
+	}	
 }

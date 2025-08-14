@@ -3,7 +3,7 @@ let etatMenuFiltre = false;
 // apres l'initialisation du HTML
 document.addEventListener("DOMContentLoaded", () => {
     		for (let i = 0; i < 10; i++) {
-    			ajouterVehicule("/res/image_ref.jpg");
+    			ajouterVehicule("./res/image_ref.jpg");
     		}
 
     		actionnerBoutonImageExplication(100, document.getElementById("suivant"));
@@ -12,7 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
     		document.getElementById("boutonMenuDeroulantFiltre").addEventListener("click", () => {
     			actionnerBoutonFiltrer();
     		});
+
+    		redimentionnerDivEcran();
+    		window.addEventListener("resize", () => {
+    			redimentionnerDivEcran();
+				});
 });
+
+function redimentionnerDivEcran() {
+	const divEcran =  document.querySelector(".ecran");
+	divEcran.style.width = window.innerWidth + "px";
+  divEcran.style.height = (window.innerHeight - document.querySelector("header").offsetHeight) + "px";
+}
 
 function actionnerBoutonImageExplication(nbPixel, bouton) {
 	const divConteneurImageExplication = document.getElementById("conteneurImageExplication");
@@ -24,7 +35,7 @@ function actionnerBoutonImageExplication(nbPixel, bouton) {
 function actionnerBoutonFiltrer() {
 	const flecheHaut = document.getElementById("flecheHautMenuDeroulantFiltre");
 	const flecheBas = document.getElementById("flecheBasMenuDeroulantFiltre");
-	const conteneurFiltre = document.querySelector(".conteneurFiltre");
+	const conteneurFiltre = document.querySelector(".surConteneurFiltre");
 
 	etatMenuFiltre = !etatMenuFiltre;
 
@@ -32,11 +43,11 @@ function actionnerBoutonFiltrer() {
 		
 		flecheHaut.classList.remove("cacher");
 		flecheBas.classList.add("cacher");
-		conteneurFiltre.style.display = "flex";
+		conteneurFiltre.classList.remove("cacher");
 	} else {
 		flecheHaut.classList.add("cacher");
 		flecheBas.classList.remove("cacher");
-		conteneurFiltre.style.display = "none";
+		conteneurFiltre.classList.add("cacher");
 	}
 }
 // //
@@ -74,6 +85,8 @@ function afficherInfo() {
 
   	const baliseVehicules = document.querySelector(".vehicules");
   	if (baliseVehicules) baliseVehicules.classList.add("flouter");
+
+  	balise.offsetHeight;
 
   	balise.focus();
 		balise.addEventListener("blur", (event) => {
