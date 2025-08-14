@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BDD Pompier</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script type="text/javascript" src="./js/placement.js"></script>
+</head>
+<body>
+	<header class="font-white">
+		<div class="titre">
+			<h1 class="font-oswald-300">Base de données des véhicules miniatures</h1>
+			<hr/>
+			<p>
+				Voici le base de données de la collètion de véhicules de pompiers. Elle regroupe tout les vehicules ainsi que leurs informations.
+			</p>
+		</div>
+		<div class="filtrage">
+			<div class="titreMenuDeroulant">
+				<h2>Filtre :</h2>
+				<div id="btnMenuDeroulant">
+					<button id="boutonMenuDeroulantFiltre">
+						<div id="flecheBasMenuDeroulantFiltre" class="">
+							<svg class="w-6 h-6 text-gray-800 dark:text-white font-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+							</svg>
+						</div>
+						<div id="flecheHautMenuDeroulantFiltre" class="cacher">
+							<svg class="w-6 h-6 text-gray-800 dark:text-white font-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+							  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+							</svg>
+						</div>
+					</button>
+				</div>	
+			</div>
+			<div class="conteneurFiltre cacher">
+				<div class="filtre">
+					<label for="constructeurSelect" class="nomFiltre">Constructeur :</label>
+					<select name="constructeur" id="constructeurSelect">
+						<option value="">------Tout------</option>
+					</select>
+				</div>
+				<div class="filtre">
+					<label for="marqueSelect" class="nomFiltre">Marque :</label>
+					<select name="marque" id="marqueSelect">
+						<option value="">------Tout------</option>
+					</select>
+				</div>
+				<div class="filtre">
+					<label for="couleurSelect" class="nomFiltre">Couleur :</label>
+					<select name="couleur" id="couleurSelect">
+						<option value="">------Tout------</option>
+					</select>
+				</div>
+				<div class="filtre">
+					<label for="anneeSelect" class="nomFiltre">Année :</label>
+					<select name="annee" id="anneeSelect">
+						<option value="">------Tout------</option>
+					</select>
+				</div>
+				<div class="filtre">
+					<label for="echelleSelect" class="nomFiltre">Echelle :</label>
+					<select name="echelle" id="echelleSelect">
+						<option value="">------Tout------</option>
+					</select>
+				</div>
+				<div>
+					<button id="boutonRechercheFiltre" class="font-white">
+						<div>
+							<p>Rechercher</p>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="ecran">
+		<div class="explication cacher" tabindex="-1">
+			<div class="zoneImageExplication">
+				<button class="boutonImageExplication" id="precedent">
+					<svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 24 24">
+					  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+					</svg>
+				</button>
+
+				<div id="conteneurImageExplication"></div>
+
+				<button class="boutonImageExplication" id="suivant">
+					<svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 24 24">
+					  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+					</svg>
+				</button>
+			</div>
+			<div class="infosVehicules">
+				<div class="infoVehicule" id="infoConstructeur">
+					<h2 class="font-nunito-700">Constructeur</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoMarque">
+					<h2 class="font-nunito-700">Marque</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoModele">
+					<h2 class="font-nunito-700">Modele</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoType">
+					<h2 class="font-nunito-700">Type</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule infoListe" id="infoCouleur">
+					<h2 class="font-nunito-700">Couleur(s)</h2>
+					<ul>
+						<li>
+							<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+						</li>
+					</ul>
+				</div>
+				<div class="infoVehicule" id="infoEtat">
+					<h2 class="font-nunito-700">Etat</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoEchelle">
+					<h2 class="font-nunito-700">Echelle</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoAnneeFabrication">
+					<h2 class="font-nunito-700">Année de fabrication</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoBoite">
+					<h2 class="font-nunito-700">Boite</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoPaysFabrication">
+					<h2 class="font-nunito-700">Pays de fabrication</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule infoListe" id="infoMatiere">
+					<h2 class="font-nunito-700">Matiere(s)</h2>
+					<ul>
+						<li>
+							<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+						</li>
+					</ul>
+				</div>
+				<div class="infoVehicule" id="infoReferance">
+					<h2 class="font-nunito-700">Referance</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoHistoire">
+					<h2 class="font-nunito-700">Histoire</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="infoVehicule" id="infoNote">
+					<h2 class="font-nunito-700">Note(s)</h2>
+					<p class="font-nunito-400">Lorem ipsum dolor sit amet</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>	
+	
+	<div class="vehicules">
+	<!--
+		<button class="bouton_vehicule">
+			<div class="conteneur">
+				<div id="nom">
+					<p class="font-nunito-400">nom du vehicule</p>
+				</div>
+			</div>
+		</button>
+	-->
+	</div>	
+</body>
+</html>

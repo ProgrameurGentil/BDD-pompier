@@ -1,0 +1,270 @@
+body {
+	background-color: gray;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: y none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*
+* {
+  outline: 1px solid red;
+} */
+
+/* font */
+.font-nunito-700 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-nunito-400 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-oswald-300 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-white {
+	color: #DCD7C9;
+}
+/**/
+
+button {
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+header {
+	background-color: #222831;
+	padding: 20px 0;
+	margin-bottom: 20px;
+}
+
+div.titre {
+	margin: 0 50px;
+	padding: 10px 0;
+	text-align: center;
+	border: 2px dashed;
+}
+
+div.titre > p {
+	font-style: italic;
+}
+
+hr {
+	width: 500px;
+	height: 0;
+}
+
+header > div.filtrage > div.titreMenuDeroulant {
+	display: flex;
+	padding: 0 50px;
+}
+
+header > div.filtrage > div.titreMenuDeroulant > div#btnMenuDeroulant {
+	padding-top: 22px;
+	padding-left: 10px;
+}
+
+div.conteneurFiltre {
+	/*display: flex;*/
+	gap: 20px;
+	padding-left: 50px;
+}
+
+div.conteneurFiltre > div.filtre > select {
+	width: 100px;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+
+button#boutonRechercheFiltre {
+	outline: thin;
+	border: 1px solid;
+	height: 30px;
+	margin-top: -10px;
+}
+
+button#boutonRechercheFiltre > div > p {
+	margin: 0;
+	padding: 5px;
+}
+
+.vehicules {
+	justify-items: center;
+	/*width: 100vw;
+	height: 100vh;*/
+	text-align: center;
+}
+
+.conteneur {
+	border: 1px solid;
+	border-radius: 10px;
+	width: 200px;
+	height: 200px;
+	/*background-image: url("./res/image_ref2.jpg"); /* a enlever */
+	background-size: 200px 200px;
+
+	justify-items: center;
+}
+
+.conteneur #nom {
+	margin-top: 155px;
+	background-color: rgb(128, 128, 128, 0.9);
+	border: 1px solid;
+	border-radius: 10px;
+	width: 180px;
+	justify-items: center;
+}
+
+.bouton_vehicule {
+	margin: 0 5px 10px;
+}
+
+.bouton_vehicule:hover {
+	/*animation: effetZoomDezomm 1.5s infinite;*/
+	transform: scale(95%);
+	transition-duration: .5s;
+}
+
+.bouton_vehicule:not(hover) {
+	transform: scale(100%);
+	transition-duration: .5s;
+}
+
+@keyframes effetZoomDezomm {
+	0%, 100% {
+		transform: scale(1.0);
+	}
+	50% {
+		transform: scale(.9);
+	}
+}
+
+.ecran {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+  	align-items: center;
+ 	justify-content: center;
+ 	/*border: 1px solid;*/
+}
+
+/*.ecran:not(:focus)  {
+	display: none;
+}*/
+
+.cacher {
+	display: none;
+}
+
+.explication {
+	position: absolute;
+	margin: auto;
+	vertical-align: middle;
+	border: 1.5px solid;
+	border-radius: 10px;
+	background-color: darkgray;
+	width: 500px;
+	height: 500px;
+	z-index: 1;
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: white darkgray;
+	scrollbar-gutter: auto;
+}
+
+.flouter {
+	filter: blur(10px);
+}
+
+.vehicules.flouter > .bouton_vehicule {
+	transform: none;
+}
+
+div.zoneImageExplication {
+	display: flex;
+}
+
+div#conteneurImageExplication {
+	display: flex;
+	overflow: auto;
+	scroll-snap-type: x;
+	padding: 10px;
+	gap: 12px;
+	scroll-padding: 0px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+div#conteneurImageExplication::-webkit-scrollbar {
+  display: none;
+}
+
+div#conteneurImageExplication img {
+	width: 50%;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
+
+div#conteneurImageExplication > button.boutonImageExplication {
+	margin: 0;
+}
+
+
+/*
+div#conteneurImageExplication img:first-child {
+	margin-left: 125px;
+}
+
+div#conteneurImageExplication img:last-child {
+	margin-right: 125px;
+}
+*/
+
+
+div.infoVehicule > h2 {
+	margin: 0 0 5px 0;
+}
+
+div.infoVehicule > p {
+	margin: 0;
+}
+
+div.infosVehicules {
+	margin-left: 5px;
+}
+
+div.infoListe > ul > li {
+	margin-left: -20px;
+}
+
+div.infosVehicules > div.infoVehicule {
+	border: 1px solid;
+	border-style: none none solid none;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+div.infosVehicules > div.infoVehicule:last-child {
+	border: 0px solid;
+	padding: 0 0 20px 0;
+}
