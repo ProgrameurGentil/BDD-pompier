@@ -3,7 +3,7 @@ let etatMenuFiltre = false;
 // apres l'initialisation du HTML
 document.addEventListener("DOMContentLoaded", () => {
     		for (let i = 0; i < 10; i++) {
-    			ajouterVehicule("./res/image_ref.jpg");
+    			ajouterVehicule("/res/image_ref.jpg");
     		}
 
     		actionnerBoutonImageExplication(100, document.getElementById("suivant"));
