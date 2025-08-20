@@ -71,7 +71,8 @@
 	"etats" : [
 			{
 				"id" : 0,
-				"nom" : ""
+				"nom" : "",
+				"liste_vehicule" : [0]
 			}
 		]
 }
