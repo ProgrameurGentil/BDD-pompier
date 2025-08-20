@@ -1,0 +1,77 @@
+{
+	"véhicules" : [
+			{
+				"id":0,
+				"marque" : [0],
+				"constructeur" : 0,
+				"type" : 0,
+				"modele" : "",
+				"boite" : "",
+				"pays" : 0,
+				"echelle" : 0,
+				"reference" : "",
+				"matiere" : [0],
+				"etat" : 0,
+				"photos" : [""],
+				"histoire" : "",
+				"note" : ""
+			}
+		],
+
+	"constructeurs" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"histoire" : "",
+				"liste_vehicule" : [0]
+			}
+		],
+
+	"marques" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"histoire" : "",
+				"liste_vehicule" : [0]
+			}
+		],
+
+	"types" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"liste_vehicule" : [0]	
+			}
+		],
+
+	"pays" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"liste_vehicule" : [0]	
+			}
+		],
+
+	"echelles" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"liste_vehicule" : [0]	
+			}
+		],
+
+	"matieres" : [
+			{
+				"id" : 0,
+				"nom" : "",
+				"liste_vehicule" : [0]	
+			}
+		],
+
+	"etats" : [
+			{
+				"id" : 0,
+				"nom" : ""
+			}
+		]
+}
