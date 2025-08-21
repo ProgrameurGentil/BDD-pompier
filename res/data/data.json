@@ -136,6 +136,23 @@
 				"nom" : "Mauvais",
 				"liste_vehicule" : []
 			}
+		],
+	"boites" : [
+			{
+				"id" : 0,
+				"nom" : "Boite d'origine",
+				"liste_vehicule" : [0]
+			},
+			{
+				"id" : 1,
+				"nom" : "Coque en plastique",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 2,
+				"nom" : "Sans boite",
+				"liste_vehicule" : []
+			}
 		]
-
 }
+
