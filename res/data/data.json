@@ -2,16 +2,17 @@
 	"véhicules" : [
 			{
 				"id":0,
-				"marque" : [0],
-				"constructeur" : 0,
+				"marque" : [1],
+				"constructeur" : 1,
 				"type" : 0,
-				"modele" : "",
-				"boite" : "",
-				"pays" : 0,
-				"echelle" : 0,
-				"reference" : "",
-				"matiere" : [0],
+				"modele" : "Amork",
+				"boite" : "Boite d'origine",
+				"pays" : 1,
+				"echelle" : 1,
+				"reference" : "12413",
+				"matiere" : [1],
 				"etat" : 0,
+				"couleur" : [1],
 				"photos" : [""],
 				"histoire" : "",
 				"note" : ""
@@ -21,7 +22,13 @@
 	"constructeurs" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
+				"histoire" : "",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 1,
+				"nom" : "Bburago",
 				"histoire" : "",
 				"liste_vehicule" : [0]
 			}
@@ -30,16 +37,23 @@
 	"marques" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
+				"histoire" : "",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 1,
+				"nom" : "Volkswagen",
 				"histoire" : "",
 				"liste_vehicule" : [0]
 			}
+
 		],
 
 	"types" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
 				"liste_vehicule" : [0]	
 			}
 		],
@@ -47,7 +61,12 @@
 	"pays" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
+				"liste_vehicule" : []	
+			},
+			{
+				"id" : 1,
+				"nom" : "chine",
 				"liste_vehicule" : [0]	
 			}
 		],
@@ -55,7 +74,12 @@
 	"echelles" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
+				"liste_vehicule" : []	
+			},
+			{
+				"id" : 1,
+				"nom" : "1/43",
 				"liste_vehicule" : [0]	
 			}
 		],
@@ -63,17 +87,54 @@
 	"matieres" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "N/A",
+				"liste_vehicule" : []	
+			},
+			{
+				"id" : 1,
+				"nom" : "resine",
 				"liste_vehicule" : [0]	
-			}
+			} 
+		],
+
+	"couleurs" : [
+			{
+				"id" : 0,
+				"nom" : "N/A",
+				"liste_vehicule" : []	
+			},
+			{
+				"id" : 1,
+				"nom" : "rouge",
+				"liste_vehicule" : [0]	
+			} 
 		],
 
 	"etats" : [
 			{
 				"id" : 0,
-				"nom" : "",
+				"nom" : "Neuf",
 				"liste_vehicule" : [0]
-				
-			}
+			},
+			{
+				"id" : 1,
+				"nom" : "Exellent",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 2,
+				"nom" : "Bon",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 3,
+				"nom" : "Pas terrible",
+				"liste_vehicule" : []
+			},
+			{
+				"id" : 4,
+				"nom" : "Mauvais",
+				"liste_vehicule" : []
+			},
 		]
 }
