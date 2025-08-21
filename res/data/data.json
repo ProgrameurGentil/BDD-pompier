@@ -6,7 +6,7 @@
 				"constructeur" : 1,
 				"type" : 0,
 				"modele" : "Amork",
-				"boite" : "Boite d'origine",
+				"boite" : 0,
 				"pays" : 1,
 				"echelle" : 1,
 				"reference" : "12413",
@@ -156,5 +156,6 @@
 			}
 		]
 }
+
 
 
