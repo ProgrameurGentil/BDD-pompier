@@ -2,7 +2,7 @@
 	"vehicules" : [
 			{
 				"id":0,
-				"marque" : [1],
+				"marque" : 1,
 				"constructeur" : 1,
 				"type" : 0,
 				"modele" : "Amork",
@@ -156,6 +156,7 @@
 			}
 		]
 }
+
 
 
 
