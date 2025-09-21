@@ -7,8 +7,11 @@ lireJSON();
 // apres l'initialisation du HTML
 
 function initialiser() {
+	let listeImages;
   for (let i = 0; i < json["vehicules"].length; i++) {
-    ajouterVehicule(i, "./res/image_ref.jpg");
+  	listeImages = json["vehicules"][i]["photos"];
+  	if (listeImages.length > 0) ajouterVehicule(i, listeImages[0]);
+    else ajouterVehicule(i, "./res/image_ref.jpg");
   }
 }
 
@@ -76,6 +79,9 @@ function ajouterVehicule(id, url_image) {
   baliseButton.value = id;
   baliseConteneur.setAttribute("class", "conteneur");
   baliseConteneur.style.backgroundImage = "url("+url_image+")";
+  baliseConteneur.style.backgroundRepeat = "no-repeat";
+  baliseConteneur.style.backgroundSize = "cover";
+  baliseConteneur.style.backgroundPosition = "center";
   baliseNom.setAttribute("id", "nom");
   baliseP.innerText = "Nom du vehicule";
 
@@ -86,7 +92,7 @@ function ajouterVehicule(id, url_image) {
   parent.appendChild(baliseButton);
   baliseButton.addEventListener("click", (event) => {
   	afficherInfo(id);
-  	initialiserImagesVehicule("col");
+  	//console.log(id)
   });
 }
 
@@ -97,6 +103,9 @@ function afficherInfo(idVehicule) {
   	initialiserInfosVehicules(json["vehicules"][idVehicule]);
   	actionnerBoutonVehicule(true);
   	balise.classList.remove("cacher");
+
+  	const divConteneurImageExplication = document.getElementById("conteneurImageExplication");
+	  divConteneurImageExplication.scrollBy({ left: -5000, behavior: 'smooth' });
 
   	const baliseVehicules = document.querySelector(".vehicules");
   	if (baliseVehicules) baliseVehicules.classList.add("flouter");
@@ -130,34 +139,10 @@ function actionnerBoutonVehicule(val) {
 	}
 }
 
-//
-async function donnerListeImages(nom) {
-	const dossier = "./res/collection/"; // a changer
-	let listeImages = [];
-
-	for (let i = 1; i < 6; i++) {
-		let image = dossier + nom + i + ".jpg";
-		
-		let reponse = await fetch(image, { method: "HEAD" });
-		try { 
-			if (reponse.ok) {
-			  listeImages.push(image);
-			} else {
-			}
-		} catch {
-			console.log("Erreur réseau ou fichier inaccessible")
-		};
-	}
-
-	return listeImages;
-}
-
 /* ajout de l'image dans les explications */
-async function initialiserImagesVehicule(nom) {
+async function initialiserImagesVehicule(listeImages) {
 	const divImageExplication = document.querySelector("#conteneurImageExplication");
-	let listeImages = await donnerListeImages(nom);
 	divImageExplication.innerHTML = '';
-
 	for (let i = 0; i < listeImages.length; i++) {
 		const img = document.createElement('img');
 		img.src = listeImages[i];
@@ -205,7 +190,15 @@ async function initialiserInfosVehicules(jsonVehicule) {
 	const pNote = document.querySelector("#infoNote p");
 	let temp;
 
-	//console.log(jsonVehicule);
+	document.querySelector("#conteneurImageExplication").innerHTML = '';
+	const listeImages = jsonVehicule["photos"];
+	if (listeImages.length > 0) {
+		initialiserImagesVehicule(listeImages);
+		document.querySelector("#zoneImageExplication").classList.remove("cacher");
+	} 
+	else document.querySelector("#zoneImageExplication").classList.add("cacher");
+
+	//console.log(listeImages.length);
 
 	pHistoire.textContent = jsonVehicule["histoire"];
 	pNote.textContent = jsonVehicule["note"];

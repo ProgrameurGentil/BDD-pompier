@@ -136,10 +136,15 @@ button#boutonRechercheFiltre > div > p {
 	border-radius: 10px;
 	width: 180px;
 	justify-items: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .bouton_vehicule {
 	margin: 0 5px 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .bouton_vehicule:hover {
@@ -209,6 +214,11 @@ div.zoneImageExplication {
 	display: flex;
 }
 
+
+div.zoneImageExplication.cacher {
+	display: none;
+}
+
 div#conteneurImageExplication {
 	display: flex;
 	overflow: auto;
@@ -252,6 +262,7 @@ div.infoVehicule > h2 {
 
 div.infoVehicule > p {
 	margin: 0;
+	white-space: pre-line;
 }
 
 div.infosVehicules {
